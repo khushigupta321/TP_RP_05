@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        .box {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            border: 2px solid black;
+            margin: 60px auto;
+            align-items: center;
+            background:linear-gradient(135deg, #bdc3c7, #2c3e50);
+            height:348px;
+            font-family: math;
+        }
+        .box input[type=text] {
+            position: relative;
+            top: 40px;
+            width: 300px;
+            height: 49px;
+            border-radius: 17px;
+            padding: 0px 10px;
+            font-size: 18px;
+            font-family: system-ui;
+            box-shadow: 0px 0px 20px 5px;
+        }
+        .box button {
+            position: relative;
+            top: 85px;
+            width: 100px;
+            height: 30px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0px 0px 4px 1px;
+        }
+        ul li {
+            font-size: 20px;
+        }
+        .unorder {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+            margin: 0px auto;
+            font-size: 20px;
+            width: 400px;
+            box-sizing: border-box;
+            padding: 17px 0px 0px 0px;
+        }
+        .btn2 {
+            border-radius: 10px;
+            background-color: red;
+            color: black;
+            margin-left: 19px;
+        }
+        .btn1 {
+            border-radius: 18px;
+            background-color: lightgrey;
+            margin-left: 22px;
+        }
+        .list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>TODO LIST</h1>
+        <input type="text" placeholder="Enter Task Name "id="input">
+        <button onclick="clickMe()">Click Me</button>
+    </div>
+    <div class="unorder" id="order">
+        <ol id="list"></ol>
+    </div>
+    <script>
+        var list = document.getElementById("list");
+        var idcounter = 0;
+
+        function clickMe() {
+            var input = document.getElementById("input");
+            var unorder = document.getElementById("order");
+            unorder.style.backgroundColor =  "#BB8493";
+            unorder.style.border = "2px solid black";
+            var itemId = "list" + idcounter++;
+            var listItem = `<div class="list-item" id="${itemId}-container">
+                                <li id="${itemId}">${input.value}</li>
+                                <button class="btn1" onclick="completeButton('${itemId}')">Complete</button>
+                                <button class="btn2" onclick="remove('${itemId}-container')">Remove</button>
+                            </div>`;
+            list.innerHTML += listItem;
+            input.value = '';
+        }
+
+        function completeButton(itemId) {
+            var listItem = document.getElementById(itemId);
+            listItem.style.textDecoration = "line-through";
+            listItem.style.backgroundColor = "indianred";
+        }
+
+        function remove(itemId) {
+            var listItem = document.getElementById(itemId);
+            listItem.remove();
+        }
+    </script>
+</body>
+</html>

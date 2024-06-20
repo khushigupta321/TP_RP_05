@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertisement</title>
+</head>
+<style>
+    body {
+        background-color: #f0f0f0; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        }
+
+   .container {
+    margin: auto;
+    width: 600px;
+    height: 500px;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    top: 120px;
+   }
+  
+.image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px; */
+    width: 300px;
+    /* margin-left: 84px; */
+    height: 500px;
+    border-radius: 14px;
+    
+}
+
+.image-section img {
+    /* position: absolute; */
+    /* top: 14%; */
+    /* left: 24%; */
+    width: 300px;
+    height: 500px;
+    /* height: 64%; */
+    border-radius: 14px;
+
+}
+.text-section {
+    /* position: absolute;
+    left: 44%;
+    top: 13%; */
+}
+.price{
+    font-size: 16px;
+    color: #1a6d4f;
+    margin-left: 21px;
+}
+
+.add-to-cart-btn {
+            font-size: 17px;
+            height: 45px;
+            background-color: #1a6d4f;
+            color: white;
+            border-radius: 12px;
+            margin-top: 2%;
+            margin-left: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 15px
+    }
+</style>
+<body>
+   
+        <div class="container"> 
+            <div class="image-section">
+                <img src="assests/image-product-desktop.jpg" alt="Gabrielle Essence Eau De Parfum">
+            </div>
+            <div class="text-section">
+                <h2 style="font-size: 30px;font-family: monospace; color: #8a8a8a;margin-left: 21px;">PERFUME</h2>
+                <h1 style="font-family: Georgia;color: #333; font-size: 35px; margin-left: 21px;">Gabrielle<br>Essence Eau <br> De Parfum</h1>
+                <p style="font-size: 17px;color: #555;  margin-left: 21px;">A floral, solar and voluptuous<br>interpretation composed by <br>Olivier Polge, Perfumer-Creator <br>for the House of CHANEL.</p>
+                <div class="price">
+                <h1>$149.00</h1>
+                <h2 style="color: darkgrey;text-decoration: line-through;font-size: 22px; margin-left: 137px;margin-top: -23%;">$169.99</h2>
+                </div>
+                <button class="add-to-cart-btn">
+                    Add to Cart
+                </button>
+        </div>
+    </div> 
+   
+</body>
+</html>

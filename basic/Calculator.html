@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        button{
+            font-size: 33px;
+            height: 60px;
+            width: 74px;
+            margin: 10px;
+        }
+        body{
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div style="margin: 10% 0px; border: 2px solid black; width: 419px; margin: 2% auto; height: 523px; padding: 32px 0px;background: rgb(193,133,133);background: linear-gradient(0deg, rgba(193,133,133,1) 0%, rgba(33,33,65,0.9011464316464035) 35%, rgba(0,212,255,1) 100%);         
+    ; border-radius: 43px;">
+        <div>
+            <input type="text" placeholder="0" id="input" style="width: 360px; height: 122px; font-size: 50px; font-weight: bold; text-align: right; border: 2px solid black;  border-radius: 40px; color: black;     box-shadow: 0px 0px 20px 5px;">
+        </div>
+        <div>
+            <button style="background-color: #124076; color: white;"onclick="Cancel()">C</button>
+            <button style="background-color: #124076; color: white;"onclick="symbols('%')">%</button>
+            <button style="background-color: #124076; color: white;"onclick="Delete()">DEL</button>
+            <button style="background-color: #124076; color: white;"onclick="symbols('/')">/</button></div>
+            <div>
+                <button style="background-color: black; color: white;"onclick="numbers('7')">7</button>
+                <button style="background-color: black; color: white;"onclick="numbers('8')">8</button>
+                <button style="background-color: black; color: white;"onclick="numbers('9')">9</button>
+                <button style="background-color: #124076; color: white;"onclick="symbols('*')">*</button>
+            </div>
+            <div>
+
+                <button style="background-color: black; color: white;"onclick="numbers('4')">4</button>
+                <button style="background-color: black; color: white;"onclick="numbers('5')">5</button>
+                <button style="background-color: black; color: white;"onclick="numbers('6')">6</button>
+                <button style="background-color: #124076; color: white;"onclick="symbols('-')">-</button>
+            </div>
+            <div>
+
+                <button style="background-color: black; color: white;"onclick="numbers('1')">1</button>
+                <button style="background-color: black; color: white;"onclick="numbers('2')">2</button>
+                <button style="background-color: black; color: white;"onclick="numbers('3')">3</button>
+                <button style="background-color: #124076; color: white;"onclick="symbols('+')">+</button>
+            </div>
+            <div>
+                <button style="background-color: black; ;color: white;" onclick="numbers('0')">00</button>
+                <button style="background-color: black; color: white;" onclick="numbers('0')">0</button>
+                <button style="background-color: black; color: white;"onclick="symbols('.')">.</button>
+                <button style="background-color: #124076; color: white;"onclick="result()">=</button>
+            </div>
+
+        </div>
+        <script>
+            var input1=document.getElementById('input')
+            function numbers(value){
+                input1.value+=value;
+                // console.log("hello")
+            }
+            function symbols(value){
+                input1.value+=value
+            }
+            function Delete(){
+                input1.value=input1.value.slice(0,-1)
+            }
+            function Cancel(){
+                input1.value=""
+            }
+            function result(){
+                input1.value=eval(input.value)
+            }
+        </script>
+</body>
+
+
+</html>
